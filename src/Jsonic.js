@@ -417,6 +417,7 @@
             play:function(musicScore,speed,curve){
                 var me=this;
                 me.IsRunning=true;
+                me.MusicScore = musicScore;
                 me.makeDistortionCurve(curve);
                 var _index=0,
                     _ctx = this.Ctx,
@@ -467,7 +468,17 @@
                 */
             },
             stop:function(){
-                this.IsRunning=false;
+                var me = this,
+                    musicScore = me.MusicScore,
+                    _cData,i,l;
+                me.IsRunning=false;
+                for(i=0,l=musicScore.Data.length;i<l;i++){
+                    _cData = musicScore.Data[i];
+                    if(_cData.BaseRollCall!=0){
+                        _cData.Osc.stop();
+                        delete _cData.Osc;
+                    }
+                }
                 me.onend();
             },
             onend:function(){
