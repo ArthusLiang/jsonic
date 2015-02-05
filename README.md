@@ -24,29 +24,6 @@ You can use javascripte to play a tune.
 	//play music
 	track.play(musicSocre,90);
 
-## Ultrasound Channel ##
-
-[http://jsonic.net/doc/ultrasound.html](http://jsonic.net/doc/ultrasound.html)
-
-Use ultrasound to transfer data.(Something with a higher performance is coming...)
-
-*create a sender*
-
-    var ultrasound = new Jsonic.Ultrasound(),
-    	sender = ultrasound.createSender();
-    sender.send('123');
-
-*create an accepter*
-
-	var ultrasound = new Jsonic.Ultrasound(),
-	accepter = ultrasound.createAccepter();
-	
-	accepter.bind('123',function(msg){
-		alert(msg);
-	});
-
-	accepter.start();
-
 ## Audio Visualization ##
 
 [http://jsonic.net/doc/painter.html](http://jsonic.net/doc/painter.html)
@@ -70,3 +47,51 @@ Do you know Siri?
     });
     
     voix.start();
+
+## Band ##
+
+[http://jsonic.net/doc/band.html](http://jsonic.net/doc/band.html)
+
+create a band
+
+    var band = new Band();
+	band.initDefaultChannel();
+
+*Receiving end*
+
+	navigator.webkitGetUserMedia({
+	    audio:{optional:[{echoCancellation:false}]}
+	    },function(stream){
+	        _input = band.AudioContext.createMediaStreamSource(stream);
+	        band.listenSource(_input);
+	        band.scanEnvironment();
+	},function(e){});
+
+*Sending end*
+
+	band.send('Hello Jsonic',function(){
+	    //call back
+	});
+
+## Ultrasound Channel（removed after v1.1） ##
+
+[http://jsonic.net/doc/ultrasound.html](http://jsonic.net/doc/ultrasound.html)
+
+Use ultrasound to transfer data.(Something with a higher performance is coming...)
+
+*create a sender*
+
+    var ultrasound = new Jsonic.Ultrasound(),
+    	sender = ultrasound.createSender();
+    sender.send('123');
+
+*create an accepter*
+
+	var ultrasound = new Jsonic.Ultrasound(),
+	accepter = ultrasound.createAccepter();
+	
+	accepter.bind('123',function(msg){
+		alert(msg);
+	});
+
+	accepter.start();
