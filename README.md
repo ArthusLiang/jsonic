@@ -41,11 +41,11 @@ Render canvas with the data from audio.
 Do you know Siri?
 
     var voix = new Jsonic.Voix();
-    
+
     voix.bind('hello',function(){
     	console.log('You said hello');
     });
-    
+
     voix.start();
 
 ## Band ##
@@ -54,7 +54,7 @@ Do you know Siri?
 
 create a band
 
-    var band = new Band();
+    var band = new Jsonic.Band();
 	band.initDefaultChannel();
 
 *Receiving end*
@@ -89,7 +89,7 @@ Use ultrasound to transfer data.(Something with a higher performance is coming..
 
 	var ultrasound = new Jsonic.Ultrasound(),
 	accepter = ultrasound.createAccepter();
-	
+
 	accepter.bind('123',function(msg){
 		alert(msg);
 	});
