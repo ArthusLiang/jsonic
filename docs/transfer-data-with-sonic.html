@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Transfer data with sonic</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a class=current href='../docs/' >Docs</a><a  href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='get-start.html'>Get Start</a>
+	
+		<a   href='compose-music.html'>Compose music</a>
+	
+		<a   href='speech-recognition.html'>Speech Recognition</a>
+	
+		<a   href='audio-visualiztion.html'>Audio Visualiztion</a>
+	
+		<a class=current  href='transfer-data-with-sonic.html'>Transfer data with sonic</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Transfer data with sonic</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="transfer-data-with-sonic">Transfer data with sonic</h1>
+<p>Sound is kind of wave. According to its physical property, we can do a lot of amazing thing.</p>
+<h2 id="band">Band</h2>
+<p>Jsonic can convert a string to sound signal and transfer data with sound. Both the receiving end and sending end need an instance of Jsonic.Band.</p>
+<pre><code>var band = new Jsonic.Band();
+</code></pre><p>You can define the Channel Pairs which are used to transfer data. Otherwise, you can use the function &#39;initDefaultChannel&#39; to choose the default Channel Pairs.</p>
+<pre><code>band.initDefaultChannel();
+</code></pre><h2 id="receiving-end">receiving end</h2>
+<pre><code>navigator.webkitGetUserMedia({
+    audio:{optional:[{echoCancellation:false}]}
+    },function(stream){
+        _input = band.AudioContext.createMediaStreamSource(stream);
+        band.listenSource(_input);
+        band.scanEnvironment();
+},function(e){});
+</code></pre><h2 id="sending-end">sending end</h2>
+<pre><code>band.send(&#39;Hello Jsonic&#39;,function(){
+    //call back
+});
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="audio-visualiztion.html">← Prev</a>
+			 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

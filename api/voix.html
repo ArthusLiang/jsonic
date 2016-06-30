@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Voix</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a  href='../docs/' >Docs</a><a class=current href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='core.html'>Core</a>
+	
+		<a   href='painter.html'>Painter</a>
+	
+		<a   href='melody.html'>Melody</a>
+	
+		<a class=current  href='voix.html'>Voix</a>
+	
+		<a   href='band.html'>Band</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Voix</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="voix">Voix</h1>
+<p>Voix is the model of speech recognition.</p>
+<h2 id="void">Void</h2>
+<h3 id="constructor">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">config</td>
+</tr>
+<tr>
+<td>keyList</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">session data</td>
+</tr>
+<tr>
+<td>isLoop</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether to run after one detection</td>
+</tr>
+</tbody>
+</table>
+<pre><code>var voix = new Jsonic.Voix();
+</code></pre><h3 id="property">Property</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onLearning</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">The event will be fired in learning mode</td>
+</tr>
+<tr>
+<td>onLog</td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">The event will be fired when voix call console.log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method">Method</h3>
+<h4 id="-start-">.start()</h4>
+<p>start to do voice recognition</p>
+<pre><code>voix.start();
+</code></pre><h4 id="-stop-">.stop()</h4>
+<p>stop doing voice recognition</p>
+<pre><code>voix.stop();
+</code></pre><h4 id="-bind-">.bind()</h4>
+<p>bind event</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msg</td>
+<td style="text-align:left">string lowcase</td>
+<td style="text-align:left">message</td>
+</tr>
+<tr>
+<td>func</td>
+<td style="text-align:left">Function,Null</td>
+<td style="text-align:left">event</td>
+</tr>
+</tbody>
+</table>
+<pre><code>voix.bind(&#39;hello&#39;,event);
+</code></pre><h4 id="-unbind-">.unbind()</h4>
+<p>unbind event</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msg</td>
+<td style="text-align:left">string lowcase</td>
+<td style="text-align:left">message</td>
+</tr>
+<tr>
+<td>func</td>
+<td style="text-align:left">Function,Null</td>
+<td style="text-align:left">event</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-one-">.one()</h4>
+<p>bind an event which will be fired only once</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msg</td>
+<td style="text-align:left">string lowcase</td>
+<td style="text-align:left">message</td>
+</tr>
+<tr>
+<td>func</td>
+<td style="text-align:left">Function,Null</td>
+<td style="text-align:left">event</td>
+</tr>
+</tbody>
+</table>
+<pre><code>voix.one(&#39;hello&#39;,event);
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="melody.html">← Prev</a>
+			<a  class="next" href="band.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

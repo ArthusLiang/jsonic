@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Get Start</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a class=current href='../docs/' >Docs</a><a  href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a class=current  href='get-start.html'>Get Start</a>
+	
+		<a   href='compose-music.html'>Compose music</a>
+	
+		<a   href='speech-recognition.html'>Speech Recognition</a>
+	
+		<a   href='audio-visualiztion.html'>Audio Visualiztion</a>
+	
+		<a   href='transfer-data-with-sonic.html'>Transfer data with sonic</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Get Start</h1>
+	</header>
+	<div class='article_body'>
+		<h3 id="what-s-jsonic">What&#39;s Jsonic</h3>
+<p>Jsonic is a small and feature-rich javascript library. It helps to improve the interaction of sound in HTML5 website or apps. With Jsonic, you can compose music, transfer data with urltrasonic channel, make sound wave visualible, do some speech recognition and so on.</p>
+<h3 id="glance">Glance</h3>
+<h2 id="use-jsonic">Use Jsonic</h2>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;Jsonic.js&quot;&gt;&lt;/script&gt;
+</code></pre><h2 id="compose-music">Compose music</h2>
+<pre><code>var N = function(rollcall,duration,freqIndex,hasDot,isPart){
+    return new Jsonic.Melody.Note(rollcall,duration,freqIndex,hasDot,isPart);
+};
+var musisSocre = new Jsonic.Melody.MusicScore(&#39;E&#39;,&#39;major&#39;,&#39;4/4&#39;);
+musisSocre.w(N(3),N(3),N(4),N(5),N(5),N(4),N(3),N(2));
+</code></pre><h2 id="speech-recognition">Speech Recognition</h2>
+<pre><code>var voix = new Jsonic.Voix(undefined,undefined,true);
+voix.bind(&#39;hi&#39;,function(){
+    alert(&#39;hi&#39;);
+});
+voix.start();
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			
+			<a  class="next" href="compose-music.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+*{margin:0px; font-size: 14px; font-family: Arial;}
+
+body{background:white;}
+a{text-decoration: none;}
+
+table{margin-top: 20px;}
+
+table,td,th,tr{height: 40px; line-height: 40px; color: #333; text-align: left;}
+table{border-collapse:collapse;}
+th,tr:nth-child(even){background-color: #f8f8f8;}
+tr:nth-child(odd){background-color: #fff;}
+td,th{border:1px solid #ccc; padding: 0 14px;}
+
+/*struct*/
+.nav{display: block; width: 100%; position: relative; height: 110px;}
+.nav a{color: #B6B6B6;  height: 50px; line-height: 50px; display: inline-block; margin: 25px 0 0 50px; padding: 0 20px; cursor: pointer;}
+.nav .current, .nav a:hover{color: #4A90E2; border-bottom: 2px solid #4A90E2;}
+.nav::after{ content: ''; background:url('../img/JSONIC.png'); display: block; width: 132px; height: 32px; position: absolute; top: 30px; right:30px;}
+.board{width: 100%; height: 100px;}
+
+.container{width: 100%; display: -webkit-flex;-webkit-flex-flow: row;}
+.aside{-webkit-flex: none; width: 220px; border-right:1px solid #EEEEEE; padding-bottom: 40px;}
+.main{-webkit-flex: auto; }
+
+
+.aside a{display: block; width: 100%; height: 44px; line-height: 44px; color: #9E9E9E; text-indent: 40px; cursor: pointer; font-size: 13px;}
+.aside .current,.aside a:hover{color: #4A90E2;}
+
+.article{position: relative;}
+.article_header{position: absolute; left: 0px; top: -120px; height: 100px; line-height: 100px; width: 100%;}
+.article_header h1{font-weight:normal; font-size:36px; text-align: center; color: #212121; width: 100%;height: 100px; line-height: 100px;}
+
+.article_body,.article_footer{padding: 0 100px 0 150px;}
+.article_body p{color: #757575; margin-top: 14px; line-height: 21px; }
+.article_body *:first-child{margin-top: 0px;}
+.article_body pre{margin-top: 20px;}
+
+.article_body h1{color: black; font-size: 20px; color: #424242; height: 30px; line-height: 30px; margin-top: 30px;}
+.article_body h2{color: black; font-size: 18px; color: #616161; height: 20px; line-height: 20px; margin-top: 20px;}
+.article_body h3{color: black; font-size: 16px; color: #9E9E9E; height: 20px; line-height: 20px; margin-top: 20px;}
+.article_body h4{color: black; font-size: 14px; color: #4A90E2; height: 18px; line-height: 18px; margin-top: 18px;}
+
+.copyright{width: 100%; margin-top: 40px; min-height: 80px;}
+.copyright p{color:#757575; line-height: 20px; height: 20px;  text-align: right; padding: 0 100px;}
+.license{color: #4A90E2; text-decoration:none; cursor: pointer; margin-left: 20px;}
+
+/*demo*/
+.demo_con{width: 100%; margin-top: 20px; position: relative; min-height: 200px;}
+.demo_btn{display: inline-block; padding: 10px 20px; text-align: center; color: white; border-radius: 4px; background-color: #03A9F4; cursor: pointer;}
+.demo_btn:hover{ background-color: #0288D1; }
+
+.pagination{width: 80%; height: 40px; line-height: 40px; margin: 40px auto; position: relative;}
+.pagination a{display: inline-block; height: 30px; line-height: 30px; color: #757575; margin-left: 14px;text-decoration: underline; }
+.pagination .current,.pagination a:hover{color: #1E88E5;text-decoration: none; }
+.pagination .prev,.pagination .next{position: absolute; top: 0px; font-size: 16px;font-style:italic; }
+.pagination .prev{left: -20px;}
+.pagination .next{right:-20px;}
+
+.list_item{margin: 40px auto; cursor: pointer; width: 80%;  border-bottom: 1px solid #EEEEEE; display: block;}
+.list_item h1{font-weight:normal; font-size:20px; color: #212121; }
+.list_item p{margin-top:20px; font-size: 14px; color: #757575;}
+.list_item .list_item_footer{margin-bottom: 10px;}
+
+

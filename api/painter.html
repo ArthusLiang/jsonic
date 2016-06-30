@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Painter</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a  href='../docs/' >Docs</a><a class=current href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='core.html'>Core</a>
+	
+		<a class=current  href='painter.html'>Painter</a>
+	
+		<a   href='melody.html'>Melody</a>
+	
+		<a   href='voix.html'>Voix</a>
+	
+		<a   href='band.html'>Band</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Painter</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="painter">Painter</h1>
+<p>Jsonic offers a model to draw the graph of sonic.</p>
+<h2 id="painter">Painter</h2>
+<h3 id="constructor">Constructor</h3>
+<pre><code>var painter = new Jsonic.Painter();
+</code></pre><h3 id="property">Property</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CanvasList</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">The canvases will be rendered</td>
+</tr>
+<tr>
+<td>DataReceiverList</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">The objects offer the data</td>
+</tr>
+<tr>
+<td>IfRender</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the painter is running</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method">Method</h3>
+<h4 id="-attach-">.attach()</h4>
+<p>Match canvas and source</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canvas</td>
+<td style="text-align:left">Dom</td>
+<td style="text-align:left">Canvas</td>
+</tr>
+<tr>
+<td>analyser</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">web audio analyserNode</td>
+</tr>
+<tr>
+<td>renderObj</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">render config</td>
+</tr>
+</tbody>
+</table>
+<pre><code>painter.attach(canvas,analyserNode,{&#39;FF&#39;:{func:&#39;wave&#39;}});
+</code></pre><h4 id="-start-">.start()</h4>
+<p>start rendering canvases</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objs</td>
+<td style="text-align:left">Object,null</td>
+<td style="text-align:left">If null, only the object will start.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>painter.start();
+</code></pre><h4 id="-stop-">.stop()</h4>
+<p>stop rendering canvases</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objs</td>
+<td style="text-align:left">Object,null</td>
+<td style="text-align:left">If null, only the object will stop.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>painter.stop();
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="core.html">← Prev</a>
+			<a  class="next" href="melody.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

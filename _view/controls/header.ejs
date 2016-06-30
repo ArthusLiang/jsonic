@@ -1,0 +1,4 @@
+<nav class='nav'>
+	<% for(var name in Nav){ %><a <%= RuleName.toLowerCase().indexOf(name.toLowerCase()) !== -1 ? 'class=current' :'' %> href='<%= Nav[name] %>' ><%= name %></a><% } %>
+</nav>
+<div class='board'></div>

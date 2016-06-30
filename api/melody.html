@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Melody</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a  href='../docs/' >Docs</a><a class=current href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='core.html'>Core</a>
+	
+		<a   href='painter.html'>Painter</a>
+	
+		<a class=current  href='melody.html'>Melody</a>
+	
+		<a   href='voix.html'>Voix</a>
+	
+		<a   href='band.html'>Band</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Melody</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="melody">Melody</h1>
+<p>Melody model in Jsonic enables you to compose music.</p>
+<h2 id="note">Note</h2>
+<h3 id="constructor">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rollcall</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">[0,1,2,3,4,5,6,7]/1#.2b</td>
+</tr>
+<tr>
+<td>duration</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">1,1/2,1/4,1/8,1/12,1/16</td>
+</tr>
+<tr>
+<td>freqIndex</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">the index of the note array(Defalut 0)</td>
+</tr>
+<tr>
+<td>hasDot</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">Whether has dot</td>
+</tr>
+<tr>
+<td>isPart</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">only for complie</td>
+</tr>
+</tbody>
+</table>
+<pre><code>var note = new Jsonic.Melody.Note(0,1/2,0,true);
+</code></pre><h3 id="property">Property</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rollcall</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">[0,1,2,3,4,5,6,7]/1#.2b</td>
+</tr>
+<tr>
+<td>FreqIndex</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">the index of the note array(Defalut 0)</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">1,1/2,1/4,1/8,1/12,1/16</td>
+</tr>
+<tr>
+<td>HasDot</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">Whether has dot</td>
+</tr>
+<tr>
+<td>_len</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">The real duration with the dot</td>
+</tr>
+<tr>
+<td>BaseRollCall</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">[0,1,2,3,4,5,6,7]</td>
+</tr>
+<tr>
+<td>HalfRollCall</td>
+<td style="text-align:left">0,-1,1</td>
+<td style="text-align:left">#,stand,b</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method">Method</h3>
+<h4 id="-divid-">.divid()</h4>
+<p>private method for complie</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remain</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">Duration</td>
+</tr>
+<tr>
+<td>sectionMax</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">The max length of a section</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-setdot-">.setDot()</h4>
+<p>To set the _len of new Object</p>
+<h2 id="musicscore">MusicScore</h2>
+<h3 id="constructor">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alphabet</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">C,D,E,F,G,A,B</td>
+</tr>
+<tr>
+<td>intervalName</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#39;major&#39; , &#39;minor&#39; , &#39;major5&#39; , &#39;minor5&#39;</td>
+</tr>
+<tr>
+<td>beat</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#39;4/4&#39;,&#39;3/4&#39;,&#39;6/8&#39;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>var musicSocre = new Jsonic.Melody.MusicScore(&#39;E&#39;,&#39;major&#39;,&#39;4/4&#39;);
+</code></pre><h3 id="property">Property</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">Store base information</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">The Notes in the music score</td>
+</tr>
+<tr>
+<td>Sections</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">The Notes which have been complied</td>
+</tr>
+<tr>
+<td>IsCompiled</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">Whether has been complied</td>
+</tr>
+<tr>
+<td>FreqChat</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">The frequent of notes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method">Method</h3>
+<h4 id="-w-">.w()</h4>
+<p>Append note to music score</p>
+<pre><code>musicSocre.w(new Jsonic.Melody.Note(3),new Jsonic.Melody.Note(4));
+</code></pre><h4 id="-d-">.d()</h4>
+<p>Delete note from music score</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">start position</td>
+</tr>
+<tr>
+<td>num</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">the number of note</td>
+</tr>
+</tbody>
+</table>
+<pre><code>musicSocre.d(0,1);
+</code></pre><h4 id="-u-">.u()</h4>
+<p>update note from music score</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>arguments[0]</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">start position</td>
+</tr>
+<tr>
+<td>arguments[1]</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">how many</td>
+</tr>
+<tr>
+<td>arguments[2]</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">New notes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>musicSocre.u(0,2,new Jsonic.Melody.Note(3),new Jsonic.Melody.Note(4));
+</code></pre><h4 id="-r-">.r()</h4>
+<p>Read note from music score</p>
+<p>update note from music score</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">start position</td>
+</tr>
+<tr>
+<td>end</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">end position</td>
+</tr>
+<tr>
+<td>return</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">Notes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>musicSocre.r(0,1);
+</code></pre><h4 id="-reverse-">.reverse()</h4>
+<p>Reverse the data in music score</p>
+<pre><code>musicSocre.reverse();
+</code></pre><h4 id="-merge-">.merge()</h4>
+<p>Append a music score to the current music score</p>
+<pre><code>musicSocre.merge(musicSocre2);
+</code></pre><h4 id="-compile-">.compile()</h4>
+<p>Complie music score for track to play</p>
+<pre><code>musicSocre.compile();
+</code></pre><h2 id="track">Track</h2>
+<h3 id="constructor">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">null</td>
+<td>Audio Contect</td>
+</tr>
+</tbody>
+</table>
+<pre><code>var track = new Jsonic.Melody.Track();
+</code></pre><h3 id="property">Property</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctx</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">The contect of the track</td>
+</tr>
+<tr>
+<td>IsRunning</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">Is Running</td>
+</tr>
+<tr>
+<td>AnalyserNode</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">web aduio analyserNode</td>
+</tr>
+<tr>
+<td>WaveShaperNode</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">web aduio waveShaperNode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method">Method</h3>
+<h4 id="-play-">.play()</h4>
+<p>play a music score</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>musicScore</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">the instance of MusicScore</td>
+</tr>
+<tr>
+<td>speed</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">how many 1/4 note in a minute</td>
+</tr>
+<tr>
+<td>curve</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">the amount of curve</td>
+</tr>
+</tbody>
+</table>
+<pre><code>track.play(musicSocre,90);
+</code></pre><h4 id="-stop-">.stop()</h4>
+<p>Stop playing</p>
+<pre><code>track.stop();
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="painter.html">← Prev</a>
+			<a  class="next" href="voix.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

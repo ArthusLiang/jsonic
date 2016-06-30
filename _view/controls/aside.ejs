@@ -1,0 +1,5 @@
+<aside class='aside'>
+	<% for(var i in List){ %>
+		<a <%= List[i].RenderData.Title=== Title ? 'class=current' :'' %>  href='<%= List[i].NameHTML %>'><%= List[i].RenderData.Title %></a>
+	<% } %>
+</aside>

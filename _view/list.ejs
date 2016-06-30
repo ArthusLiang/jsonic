@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <%- include('controls/head') %>
+  </head>
+  <body>
+      <%- include('controls/header') %>
+        <div class='container'>
+            <div class='main'>
+              <% for(var i in List){ %>
+                <a class='list_item' target='_blank' href='<%= List[i].RenderData.NameHTML %>'>
+                  <h1><%= List[i].RenderData.Title %></h1>
+                  <p><%= List[i].RenderData.Desc %></p>
+                  <p class='list_item_footer'><%= List[i].RenderData.Date %></p>
+                </a>
+              <% } %> 
+              <div class='pagination'>
+                <%- PageFirst %><%- PagePre %><%- PageGroup %><%- PageNext %><%- PageLast %>
+              </div>    
+            </div>
+        </div>  
+      <%- include('controls/footer') %>
+  </body>
+</html>

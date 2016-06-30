@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Compose music</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a class=current href='../docs/' >Docs</a><a  href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='get-start.html'>Get Start</a>
+	
+		<a class=current  href='compose-music.html'>Compose music</a>
+	
+		<a   href='speech-recognition.html'>Speech Recognition</a>
+	
+		<a   href='audio-visualiztion.html'>Audio Visualiztion</a>
+	
+		<a   href='transfer-data-with-sonic.html'>Transfer data with sonic</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Compose music</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="compose-music">Compose music</h1>
+<p>You can find the related object in Jsonic.Melody</p>
+<h2 id="note">Note</h2>
+<p>The instance of note stands for a music note. Note is the minimum part of melody. Create a note with the following code.</p>
+<pre><code>var note1 = new Jsonic.Melody.Note(7,1/4,0,false);
+</code></pre><h2 id="musicscore">MusicScore</h2>
+<p>The following code created a 4/4 e major music score.</p>
+<pre><code>var musicScore = new Jsonic.Melody.MusicScore(&#39;E&#39;,&#39;major&#39;,&#39;4/4&#39;);
+</code></pre><p>You can use the function &#39;w&#39; to append note to the music score.</p>
+<pre><code>musicScore.w(note1, note2, new Jsonic.Melody.Note(7,1/4,0,false));
+</code></pre><p>It is easy to change the modal of the music score. You just need to change the music&#39;s proprety.</p>
+<pre><code>musicScore.Mode.Alphabet=&#39;C&#39;;
+musicScore.Mode.Interval=&#39;minor&#39;;
+</code></pre><h2 id="track">Track</h2>
+<p>You need to create an instance of Track, if you want to play the music score.</p>
+<pre><code>var track = new Jsonic.Melody.Track();
+</code></pre><p>Use the function play to play a music score. The speed of the music score should be defined at this time.</p>
+<pre><code>track.play(musicScore,90);
+</code></pre><p>Use the function stop tp stop playing the music score. </p>
+<pre><code>track.stop();
+</code></pre><h2 id="trackgain">TrackGain</h2>
+<p>In the version above 1.1, TrackGain is added to Jsonic.Melody. Its usage is the same as Track. But the impliment of these two objects are different.</p>
+		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="get-start.html">← Prev</a>
+			<a  class="next" href="speech-recognition.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

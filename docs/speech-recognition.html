@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>Speech Recognition</title>
+<meta charset='utf-8'>
+<link rel="icon" type="image/x-icon" href="../img/fav.ico">
+<meta name="viewport" content="width=device-width,minimal-ui"  >
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="../css/public.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/github_gist.css" media="screen">
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/highlight.pack.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript">
+$(function(){
+});
+</script>
+  </head>
+  <body>
+  		<nav class='nav'>
+	<a class=current href='../docs/' >Docs</a><a  href='../api/' >Api</a>
+</nav>
+<div class='board'></div>
+      	<div class='container'>
+      		<aside class='aside'>
+	
+		<a   href='get-start.html'>Get Start</a>
+	
+		<a   href='compose-music.html'>Compose music</a>
+	
+		<a class=current  href='speech-recognition.html'>Speech Recognition</a>
+	
+		<a   href='audio-visualiztion.html'>Audio Visualiztion</a>
+	
+		<a   href='transfer-data-with-sonic.html'>Transfer data with sonic</a>
+	
+</aside>
+          	<div class='main'>
+          		<article class='article'>
+	<header class='article_header'>
+		<h1>Speech Recognition</h1>
+	</header>
+	<div class='article_body'>
+		<h1 id="speech-recognition">Speech Recognition</h1>
+<p>Speech recognition seems to only work in Chrome.</p>
+<h2 id="voix">Voix</h2>
+<p>At first, you need to create an instance of Jsonic.Voix.</p>
+<pre><code>var voix = new Josnic.Voix(undefined,undefined,true);
+</code></pre><p>Voix inherited Jsonic.Message. You can bind functions with voice command.</p>
+<pre><code>voix.bind(&#39;hello&#39;,function(){
+    console.log(&#39;hello&#39;);
+});
+</code></pre><p>Of course, you can use &#39;stop&#39; and &#39;start&#39; to control Voix.</p>
+<pre><code>voix.start();
+//...
+voix.stop();
+</code></pre>		
+	</div>
+	<footer class='article_footer'>
+		<div class="pagination">
+			<a  class="prev" href="compose-music.html">← Prev</a>
+			<a  class="next" href="audio-visualiztion.html">Next →</a> 	 	
+		</div>		
+	</footer>
+</article>
+       	
+          	</div>
+      	</div>	
+      <footer class='copyright'>
+	<p>©2015-2016 <a target="_blank" href="https://en.wikipedia.org/wiki/MIT_License" class='license'>MIT license</a></p>
+</footer>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
